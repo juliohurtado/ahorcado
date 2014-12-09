@@ -87,7 +87,6 @@ function inicio(){
 	var contexto = canvas.getContext("2d");				
 	var juego;
 	iniciarJuego();
-
 	btnIntentar.addEventListener('click', function(){
 		juego.intentar(txtLetra.value);
 		juego.dibujar(contexto);					
@@ -97,7 +96,8 @@ function inicio(){
 		}else if(txtPista.innerHTML.indexOf('-')==-1){
 			mensaje.innerHTML = "Felicidades, has ganado :)";
 		}
-	});
+		txtLetra.value = ""; //Limpiar el cuadro de ingreso de letras luego de cada intento
+	}); 
 
 	btnNuevo.addEventListener('click', iniciarJuego);
 
